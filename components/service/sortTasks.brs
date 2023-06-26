@@ -1,44 +1,23 @@
+' This task node handles sorting of arrays to not block UI thread.
+
+
 sub init()
-	m.top.functionName = "executeTask"
+	' When each screen instance initates it's specified field, it's function runs and updates the results field
+	' which is watched by it's respective screen to handle
+
 	m.top.ObserveField("numberSetScreenA", "sortAndCopyLastFiveNumbers")
 	m.top.ObserveField("numberSetScreenB", "findAndSortEvenNumbers")
-
  end sub
- 
- function executeTask() as void
-	? "executeTask"
-	
- '	json = get("https://api.jsonbin.io/v3/b/631f5e595c146d63ca98e072")
- '    ? json
- '    if json <> invalid
- '        m.top.response = json
- '    else
- '        ? "Error"
- '4   end if	
-    m.top.control = "stop"
 
- end function
-
- function StartTask(taskName)
-
-	m.top.control = "run"
- end function
-
- 
- function sortAndCopyLastFiveNumbers()
-	? "sortAndCopyLastFiveNumbers"
-	' Sort the inputArray in ascending order
-	inputArray = m.top.numberSetScreenA
+ function sortAndCopyLastFiveNumbers(input)
+	outputArray = []
+	inputArray = input.getData()
 	inputArray.Sort()
- 
-	' Reverse the inputArray to get descending order
 	inputArray.Reverse()
  
-	' Copy the last five elements to a new array
-	outputArray = []
 	startIndex = inputArray.Count() - 5
  
-	' Handle cases where the inputArray has fewer than five elements
+	' ensure it returns all if count is less than 5
 	if startIndex < 0 then startIndex = 0
  
 	for i = startIndex to inputArray.Count() - 1
@@ -51,7 +30,8 @@ sub init()
  end function
 
 function findAndSortEvenNumbers(input)
-    evenNumbers = []
+	outputArray = []
+    	evenNumbers = []
 	inputArray = input.getData()
 
 	' Find even numbers in the inputArray
@@ -63,15 +43,15 @@ function findAndSortEvenNumbers(input)
 
     evenNumbers.Sort()
     evenNumbers.Reverse()
-    resultArray = []
+
     for i = 0 to 4
-        if i < evenNumbers.Count() then
-            resultArray.Push(evenNumbers[i])
+        if i < evenNumbers.Count() then ' don't crash if there's less than 5
+            outputArray.Push(evenNumbers[i])
         else
             exit for
         end if
     end for
 
-	m.top.results = resultArray
+	m.top.results = outputArray
 	m.top.control = "stop"
 end function

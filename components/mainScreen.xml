@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<component name="MainScreen" extends="Scene" >
+  <script type="text/brightscript" uri="pkg:/components/mainScreen.brs" />
+  <children >
+	<Button id="SwitchScreenButton" translation="[120,590]" height="60" text="Switch Screen" showFocusFootprint = "true" />
+	<TestScreen id="ScreenA" />
+	<TestScreen id="ScreenB" />
+  </children>
+</component>

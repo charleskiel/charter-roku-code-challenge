@@ -8,17 +8,21 @@
 	</interface>
 	<children>
 
- 		<Timer id="highResTick" repeat="true" duration=".10" />
 		<Poster id="mainPoster" opacity="0" width="960.0" height="540.0" >
 			<Poster id="logoPoster" opacity="1" translation="[0,0]" width="480.0" height="245" />
 			<Label
 				id="titleLabel"
-				height="44"
-				width="480"
 				text = ""
-				horizAlign = "center"
-				vertAlign = "center"
-				translation="[360,20]" 
+				translation="[700,20]" 
+			/>
+			<Rectangle
+				id="rectangle"
+				translation="[140,250]" 				
+				color="0x000000FF"
+				height="244"
+				width="100"
+				opacity=".75"
+
 			/>
 			<Label
 				id="numberSetLabel"
@@ -27,9 +31,8 @@
 				text = ""
 				horizAlign = "left"
 				vertAlign = "center"
-				translation="[50,70]" 				
+				translation="[150,250]" 				
 				wrap="true"
-
 			/>
 		</Poster>
 
@@ -42,18 +45,13 @@
 				id="testFloat"
 				key="[0.0, 1.0]"
 				keyValue="[0.0, 1.0]"
-				fieldToInterp="mainPoster.opacity"   />
+				fieldToInterp="mainPoster.opacity" />
 				
 			<Vector2DFieldInterpolator
 				id="titleLableVectorIn"
 				key="[0.0, 1.0]"
-				keyValue="[[360,-20],[360,20]]"
-				fieldToInterp="titleLabel.translation"   />
-			<Vector2DFieldInterpolator
-				id="numberSetLabelVectorIn"
-				key="[0.0, 1.0]"
-				keyValue="[[-50,70],[50,70]"
-				fieldToInterp="numberSetLabel.translation"   />
+				keyValue="[[570,-20],[570,20]]"
+				fieldToInterp="titleLabel.translation" />
 		</Animation>
 
 		<Animation id="overlayFadeOut"
@@ -64,13 +62,8 @@
 				id="testFloat"
 				key="[0.0, 1.0]"
 				keyValue="[1.0, 0.0]"
-				fieldToInterp="mainPoster.opacity"   />
+				fieldToInterp="mainPoster.opacity" />
 				
-			<Vector2DFieldInterpolator
-				id="titleLableVectorIn"
-				key="[0.0, 1.0]"
-				keyValue="[[360,20],[360,60]]"
-				fieldToInterp="titleLabel.translation"   />
 		</Animation>
 		
 

@@ -26,8 +26,12 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
 
 	if key = "OK" and press = true
-		m.SwitchScreenButton.color = "0x00FF00A8"
+		' would use button's 
+		m.SwitchScreenButton.textcolor = "0x00FF00A8"
 	else  if key = "OK" and press = false
+		m.SwitchScreenButton.textcolor = "0xFFFFFFFF"
+
+		' Screen switch
 		if m.showingScreen = "A"
 			m.screenA.callFunc("HideOverlay")
 			m.screenB.callFunc("ShowOverlay", m.testData.record.ScreenB)

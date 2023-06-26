@@ -1,6 +1,4 @@
 sub init()
-	m.highResTick = m.top.findNode("highResTick")
-	m.highResTick.ObserveField("fire", "highResTick")
 
 	m.mainPoster = m.top.findnode("mainPoster")
 	m.logoPoster = m.top.findnode("logoPoster")
@@ -38,6 +36,15 @@ function ShowOverlay(data)
 	if m.mainPoster.opacity = 0 then
 		m.overlayFadeIn.control = "start"
 	end if
+
+	'the images seem to be the same so I'm adding a red tint to ScreenB to look like the PDF
+	if m.top.id = "ScreenB" then
+		m.logoPoster.blendColor = "0xFF0000FF"
+	else
+		m.logoPoster.blendColor = "0xFFFFFFFF"
+	endif
+
+
 end function
 
 
