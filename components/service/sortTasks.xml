@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<component name="SortTasks" extends="Task">
+	<script type="text/brightscript" uri="pkg:/components/service/sortTasks.brs" />
+	<interface>
+		<field id="results"  type="array" alwaysnotify="true"/>
+		<field id="numberSetScreenA"  type="array" alwaysnotify="true"/>
+		<field id="numberSetScreenB"  type="array" alwaysnotify="true"/>
+		<function name="StartTask" />
+
+	</interface>
+</component>

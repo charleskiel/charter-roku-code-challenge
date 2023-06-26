@@ -1,0 +1,56 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+
+	
+		{
+			"type": "brightscript",
+			"request": "launch",
+			"name": "Roku 4k Debug: Launch",
+			"stopOnEntry": false,
+			"host": "192.168.1.218",
+			"password": "904401",
+			"rootDir": "${workspaceFolder}",
+			"enableDebuggerAutoRecovery": false,
+			"stopDebuggerOnAppExit": true,
+			"internalConsoleOptions": "neverOpen",
+		},
+		{
+			"type": "brightscript",
+			"request": "launch",
+			"name": "Roku 4k Debug: Launch 2",
+			"stopOnEntry": false,
+			"host": "192.168.150.55",
+			"password": "904401",
+			"rootDir": "${workspaceFolder}",
+			"enableDebuggerAutoRecovery": false,
+			"stopDebuggerOnAppExit": true,
+			"internalConsoleOptions": "neverOpen",
+		},
+		{
+			"type": "brightscript",
+			"request": "launch",
+			"name": "Roku 3 Debug: Launch",
+			"stopOnEntry": false,
+			"host": "192.168.1.233",
+			"password": "904401",
+			"rootDir": "${workspaceFolder}",
+			"enableDebuggerAutoRecovery": false,
+			"stopDebuggerOnAppExit": true
+		},
+		{
+			"type": "brightscript",
+			"request": "launch",
+			"name": "Roku LT Debug: Launch",
+			"stopOnEntry": false,
+			"host": "192.168.1.218",
+			"password": "904401",
+			"rootDir": "${workspaceFolder}",
+			"enableDebuggerAutoRecovery": false,
+			"stopDebuggerOnAppExit": true
+		}
+	]
+}
